@@ -132,7 +132,6 @@ body {
 }
 
 .roupa1 {
-  background: rgba(255, 0, 0, 0.2);
   top: 12.75%;
   left: 22.3%;
   width: 45% !important;
@@ -140,7 +139,6 @@ body {
 }
 
 .roupa2 {
-  background: rgba(0, 255, 0, 0.2);
   top: 14.75%;
   left: 36.85%;
   width: 45% !important;
@@ -148,11 +146,59 @@ body {
 }
 
 .roupa3 {
-  background: rgba(0, 0, 255, 0.2);
   top: 11.25%;
   left: 50.6%;
   width: 45% !important;
   z-index: 6;
+}
+
+.roupa4 {
+  top: 15%;
+  left: 26.85%;
+  width: 36% !important;
+  z-index: 5;
+}
+
+.roupa5 {
+  top: 15%;
+  left: 41.37%;
+  width: 36% !important;
+  z-index: 6;
+}
+
+.roupa6 {
+  top: 19.5%;
+  left: 53%;
+  width: 40% !important;
+  z-index: 7;
+}
+
+.roupa7 {
+  top: 13%;
+  left: 25%;
+  width: 40% !important;
+  z-index: 5;
+}
+
+.roupa8 {
+  top: 18%;
+  left: 25%;
+  width: 40% !important;
+  z-index: 5;
+}
+
+.roupa9 {
+  top: 21%;
+  left: 39.45%;
+  width: 40% !important;
+  z-index: 6;
+}
+
+.roupa10 {
+  top: 20.5%;
+  left: 52.5%;
+  width: 41% !important;
+  z-index: 7;
 }
 
 /* ÁREAS DE CLIQUE */
@@ -164,24 +210,83 @@ body {
 }
 
 .roupa1.area-clique {
-  top: 20%;
+  background: rgba(7, 201, 231, 0.2);
+  top: 24%;
   left: 32%;
   width: 20% !important;
-  height: 60%;
+  height: 58%;
 }
 
 .roupa2.area-clique {
-  top: 20%;
-  left: 50%;
+  background: rgba(0, 255, 0, 0.2);
+  top: 24%;
+  left: 48%;
   width: 17% !important;
-  height: 55%;
+  height: 58%;
 }
 
 .roupa3.area-clique {
-  top: 20%;
-  left: 65%;
-  width: 20% !important;
-  height: 62%;
+  background: rgba(0, 0, 255, 0.2);
+  top: 24%;
+  left: 60%;
+  width: 27% !important;
+  height: 58%;
+}
+
+.roupa4.area-clique {
+  background: rgba(0, 0, 255, 0.2);
+  top: 25%;
+  left: 34%;
+  width: 19% !important;
+  height: 30%;
+}
+
+.roupa5.area-clique {
+  background: rgba(0, 255, 0, 0.2);
+  top: 25%;
+  left: 50%;
+  width: 19% !important;
+  height: 30%;
+}
+
+.roupa6.area-clique {
+  background: rgba(0, 0, 255, 0.2);
+  top: 25%;
+  left: 62%;
+  width: 22% !important;
+  height: 58%;
+}
+
+.roupa7.area-clique {
+  background: rgba(0, 255, 0, 0.2);
+  top: 25%;
+  left: 33%;
+  width: 25% !important;
+  height: 45%;
+}
+
+.roupa8.area-clique {
+  background: rgba(37, 206, 37, 0.2);
+  top: 25%;
+  left: 33%;
+  width: 25% !important;
+  height: 58%;
+}
+
+.roupa9.area-clique {
+  background: rgba(25, 9, 204, 0.2);
+  top: 25%;
+  left: 50%;
+  width: 25% !important;
+  height: 58%;
+}
+
+.roupa10.area-clique {
+  background: rgba(67, 199, 23, 0.2);
+  top: 25%;
+  left: 60%;
+  width: 25% !important;
+  height: 58%;
 }
 
 /* ÍCONES */
@@ -420,4 +525,76 @@ body {
     opacity: 0;
     transform: scale(0.25) translateY(-12px);
   }
+}
+
+/*Glitter Effect*/
+.glitter-vestido {
+  position: absolute;
+  inset: 0;
+
+  z-index: 8;
+
+  pointer-events: none;
+
+  overflow: visible;
+}
+
+.particula-glitter {
+  position: absolute;
+
+  background: white;
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 3px white,
+    0 0 6px white,
+    0 0 10px white;
+
+  opacity: 0;
+
+  animation: piscarGlitter 1.4s ease-in-out infinite;
+}
+
+@keyframes piscarGlitter {
+  0% {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+
+  25% {
+    opacity: 1;
+    transform: scale(1.4);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
+
+  75% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+}
+
+.estrela-glitter {
+  width: auto !important;
+  height: auto !important;
+
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+
+  color: white;
+  font-size: 12px;
+
+  text-shadow:
+    0 0 4px white,
+    0 0 8px white,
+    0 0 12px white;
 }
