@@ -1,0 +1,423 @@
+/* ÁREA DO JOGO */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#jogo {
+  position: relative;
+
+  width: 100vw;
+
+  height: 56.25vw;
+
+  max-width: 100vw;
+
+  max-height: 100vh;
+
+  aspect-ratio: 16 / 9;
+
+  overflow: hidden;
+
+  background: #fff;
+}
+
+/* CENÁRIO */
+#cenario {
+  position: relative;
+  overflow: hidden;
+}
+
+#cenario::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: white;
+  z-index: 2;
+  pointer-events: none;
+  animation: desaparecerBranco 1.2s ease forwards;
+}
+
+#cenario img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@keyframes desaparecerBranco {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+/* ARMÁRIO */
+#armario {
+  position: absolute;
+  left: 4%;
+  bottom: 3%;
+  width: 60%;
+  z-index: 3;
+
+  animation: entrarArmario 1s ease-out forwards;
+}
+
+#armario > img:first-child {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@keyframes entrarArmario {
+  from {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* PERSONAGEM */
+
+#personagem {
+  position: absolute;
+  right: 6%;
+  bottom: 2%;
+  width: 35%;
+  height: 95%;
+  z-index: 5;
+
+  animation: entrarPersonagem 1s ease-out forwards;
+}
+
+@keyframes entrarPersonagem {
+  from {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* ROUPAS */
+
+.roupa {
+  position: absolute;
+  z-index: 4;
+  width: 20% !important;
+  height: auto !important;
+  display: block;
+}
+
+.roupa1 {
+  background: rgba(255, 0, 0, 0.2);
+  top: 12.75%;
+  left: 22.3%;
+  width: 45% !important;
+  z-index: 4;
+}
+
+.roupa2 {
+  background: rgba(0, 255, 0, 0.2);
+  top: 14.75%;
+  left: 36.85%;
+  width: 45% !important;
+  z-index: 5;
+}
+
+.roupa3 {
+  background: rgba(0, 0, 255, 0.2);
+  top: 11.25%;
+  left: 50.6%;
+  width: 45% !important;
+  z-index: 6;
+}
+
+/* ÁREAS DE CLIQUE */
+
+.area-clique {
+  position: absolute;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.roupa1.area-clique {
+  top: 20%;
+  left: 32%;
+  width: 20% !important;
+  height: 60%;
+}
+
+.roupa2.area-clique {
+  top: 20%;
+  left: 50%;
+  width: 17% !important;
+  height: 55%;
+}
+
+.roupa3.area-clique {
+  top: 20%;
+  left: 65%;
+  width: 20% !important;
+  height: 62%;
+}
+
+/* ÍCONES */
+
+#icones {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.icone {
+  position: absolute;
+  width: 8%;
+  height: auto;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: transform 0.2s ease;
+}
+
+.icone:hover {
+  transform: scale(1.08);
+}
+
+/* CATEGORIAS */
+
+#botao-roupas {
+  left: 17%;
+  top: 17%;
+  width: 13%;
+}
+
+#botao-especiais {
+  left: 16%;
+  top: 41%;
+  width: 15%;
+}
+
+#botao-aleatorio {
+  left: 16%;
+  bottom: 10%;
+  width: 15%;
+}
+
+/* AÇÕES */
+
+#botao-selecionar {
+  right: -8%;
+  bottom: 5%;
+  width: 20%;
+}
+
+#botao-limpar {
+  right: -10%;
+  bottom: 23%;
+  width: 14%;
+}
+
+/* NAVEGAÇÃO */
+
+#botao-voltar {
+  left: 70%;
+  bottom: 6%;
+  width: 8%;
+}
+
+#botao-avancar {
+  left: 77%;
+  bottom: 6%;
+  width: 8%;
+}
+
+/* CONFIGURAÇÕES */
+
+#botao-configuracoes {
+  right: -10%;
+  top: 1%;
+  width: 10%;
+}
+
+/* ÍCONES DA DIREITA */
+
+#personagem .icone-personagem {
+  position: absolute;
+  height: auto;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: transform 0.2s ease;
+}
+
+#personagem .icone-personagem:hover {
+  transform: scale(1.08);
+}
+
+/* EFEITO AO PASSAR O MOUSE NAS ROUPAS */
+
+.roupa {
+  transform: scale(1);
+  transform-origin: center bottom;
+  transition:
+    scale 0.2s ease,
+    rotate 0.2s ease;
+}
+
+.roupa.destaque {
+  scale: 1.02;
+  animation: balancarRoupa 1.2s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+
+@keyframes balancarRoupa {
+  0% {
+    transform: transition 0.2s scale(1.02) rotate(-1deg);
+  }
+
+  50% {
+    transform: scale(1.02) rotate(1deg);
+  }
+
+  100% {
+    transform: transition 0.2s scale(1.02) rotate(-1deg);
+  }
+}
+
+/* DISSOLVE DA TROCA DE ROUPA */
+
+#personagem {
+  position: absolute;
+}
+
+/* As duas dolls ficam exatamente sobrepostas */
+#personagem .doll {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  pointer-events: none;
+}
+
+/* Nova doll começa invisível */
+#personagem .doll-nova {
+  opacity: 0;
+}
+
+/* Animação da nova doll */
+#personagem .doll-nova.dissolvendo {
+  animation: aparecerDoll 0.35s ease-out forwards;
+}
+
+@keyframes aparecerDoll {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Doll antiga desaparece */
+#personagem .doll-antiga.dissolvendo {
+  animation: desaparecerDoll 0.35s ease-out forwards;
+}
+
+@keyframes desaparecerDoll {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+/* EFEITO MÁGICO - RASTRO DIAGONAL */
+
+.efeito-magico {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.particula-magica {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: white;
+  box-shadow:
+    0 0 4px white,
+    0 0 8px white,
+    0 0 14px rgba(255, 255, 255, 0.8);
+
+  opacity: 0;
+
+  animation: brilhoSubir 0.7s ease-out forwards;
+  animation-delay: var(--delay);
+}
+
+.particula-magica.estrela {
+  width: auto;
+  height: auto;
+  background: none;
+  box-shadow: none;
+
+  color: white;
+  font-size: 18px;
+  line-height: 1;
+
+  text-shadow:
+    0 0 4px white,
+    0 0 9px white,
+    0 0 16px rgba(255, 255, 255, 0.9);
+}
+
+@keyframes brilhoSubir {
+  0% {
+    opacity: 0;
+    transform: scale(0.2) translateY(12px);
+  }
+
+  20% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+
+  70% {
+    opacity: 0.9;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.25) translateY(-12px);
+  }
+}
