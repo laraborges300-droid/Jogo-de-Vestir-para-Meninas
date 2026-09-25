@@ -265,8 +265,7 @@ roupas.forEach((roupa, index) => {
         glitterAtual.remove();
       }
     } else {
-
-    /* Se clicar em uma roupa diferente */
+      /* Se clicar em uma roupa diferente */
       const glitterAtual = personagem.querySelector(".glitter-vestido");
 
       if (glitterAtual) {
@@ -296,7 +295,7 @@ const especiais = [
 ];
 
 const bonecasVestidasEspeciais = [
-  "Elina P1 - Asas .png",
+  "Elina P1 - Asas.png",
   "Elina P2 - Asas.png",
   "Elina P3 - Asas.png",
 ];
