@@ -52,10 +52,7 @@ imagemPersonagem.classList.add("doll");
 
 personagem.appendChild(imagemPersonagem);
 
-function trocarRoupa(caminho, efeitoMagico = false, temGlitter = false) {
-  // Remove qualquer glitter da roupa anterior
-  removerGlitter();
-
+function trocarRoupa(caminho, efeitoMagico = false) {
   const dollAntiga = imagemPersonagem;
 
   const dollNova = document.createElement("img");
@@ -150,46 +147,42 @@ function criarEfeitoMagico() {
 }
 
 /* ROUPAS 1*/
-
 // PÁGINA 1
 const roupas = [
-  { arquivo: "7 - Clara.png", classe: "roupa4", pagina: 1 },
-  { arquivo: "8 - Odette.png", classe: "roupa6", pagina: 1 },
-  { arquivo: "8 - Rapunzel.png", classe: "roupa5", pagina: 1 },
+  { arquivo: "1 - Clara.png", classe: "roupa1", pagina: 1 },
+  { arquivo: "2 - Clara.png", classe: "roupa2", pagina: 1 },
+  { arquivo: "3 - Odette.png", classe: "roupa3", pagina: 1 },
 
   // PÁGINA 2
-  { arquivo: "4 - Genevieve.png", classe: "roupa1", pagina: 2 },
-  { arquivo: "4 - Anika.png", classe: "roupa2", pagina: 2 },
-  { arquivo: "6 - Corinne .png", classe: "roupa3", pagina: 2 },
+  { arquivo: "4 - Elina.png", classe: "roupa4", pagina: 2 },
+  { arquivo: "5 - Elina.png", classe: "roupa5", pagina: 2 },
+  { arquivo: "6 - Odette.png", classe: "roupa6", pagina: 2 },
 
   // PÁGINA 3
-  { arquivo: "8 - Anneliese.png", classe: "roupa10", pagina: 3 },
-  { arquivo: "7 - Liana.png", classe: "roupa12", pagina: 3 },
-  { arquivo: "11 - Rosella.png", classe: "roupa11", pagina: 3 },
+  { arquivo: "7 - Odette.png", classe: "roupa7", pagina: 3 },
 
   // PÁGINA 4
-  { arquivo: "2 - Clara.png", classe: "roupa7", pagina: 4 },
-  { arquivo: "7 - Odette.png", classe: "roupa8", pagina: 4 },
-  { arquivo: "10 - Rapunzel.png", classe: "roupa9", pagina: 4 },
+  { arquivo: "8 - Rapunzel.png", classe: "roupa8", pagina: 4 },
+  { arquivo: "9 - Rapunzel.png", classe: "roupa9", pagina: 4 },
+  { arquivo: "10 - Rapunzel.png", classe: "roupa10", pagina: 4 },
 ];
 
 const bonecasVestidas = [
   "Clara P1.png",
-  "Odette P1.png",
-  "Rapunzel P1.png",
-  "Genevieve P1.png",
-  "Anika P1.png",
-  "Corinne P1.png",
-  "Anneliese P1.png",
-  "Liana P1.png",
-  "Rosella P1.png",
   "Clara P2.png",
+  "Odette P2.png",
+  "Elina P1.png",
+  "Elina P2.png",
+  "Odette P1.png",
   "Odette P3.png",
+  "Rapunzel P1.png",
+  "Rapunzel P2.png",
   "Rapunzel P3.png",
 ];
 
 const looksSurpresa = [
   "Surpresa 1.png",
+  "Surpresa 2.png",
   "Surpresa 3.png",
   "Surpresa 4.png",
   "Surpresa 5.png",
@@ -199,8 +192,7 @@ const looksSurpresa = [
 let surpresaAtual = 0;
 
 let roupaAtual = null;
-const roupasComGlitter = [7, 8, 9, 10, 11, 12];
-
+const roupasComGlitter = [2, 3, 7, 10];
 roupas.forEach((roupa, index) => {
   /* IMAGEM DA ROUPA */
 
@@ -219,7 +211,7 @@ roupas.forEach((roupa, index) => {
 
   armario.appendChild(imagemRoupa);
 
-  /* ÁREA DE CLIQUE ROUPAS */
+  /* ÁREA DE CLIQUE */
 
   const areaClique = document.createElement("div");
 
@@ -240,20 +232,18 @@ roupas.forEach((roupa, index) => {
   areaClique.addEventListener("mouseleave", () => {
     imagemRoupa.classList.remove("destaque");
   });
-
   areaClique.addEventListener("click", () => {
     const glitterAtual = personagem.querySelector(".glitter-vestido");
 
     if (glitterAtual) {
       glitterAtual.remove();
     }
-
-    /* Reinicia a animação */
+    // Reinicia a animação
     imagemPersonagem.classList.remove("personagem-trocando");
     void imagemPersonagem.offsetWidth;
     imagemPersonagem.classList.add("personagem-trocando");
 
-    /* Se clicar novamente na roupa que já está sendo usada */
+    // Se clicar novamente na roupa que já está sendo usada
     if (roupaAtual === index) {
       imagemPersonagem.src = "Assets/Personagens + Roupas/Png/2.png";
 
@@ -264,9 +254,10 @@ roupas.forEach((roupa, index) => {
       if (glitterAtual) {
         glitterAtual.remove();
       }
-    } else {
+    }
 
-    /* Se clicar em uma roupa diferente */
+    // Se clicar em uma roupa diferente
+    else {
       const glitterAtual = personagem.querySelector(".glitter-vestido");
 
       if (glitterAtual) {
@@ -284,73 +275,6 @@ roupas.forEach((roupa, index) => {
   });
 
   armario.appendChild(areaClique);
-}); // ← FECHA roupas.forEach AQUI
-
-/* ESPECIAIS */
-
-const especiais = [
-  // ESPECIAL 1
-  { arquivo: "1 - Elina.png", classe: "especial1", pagina: 1 },
-  { arquivo: "2 - Elina.png", classe: "especial2", pagina: 1 },
-  { arquivo: "3 - Elina.png", classe: "especial3", pagina: 1 },
-];
-
-const bonecasVestidasEspeciais = [
-  "Elina P1 - Asas .png",
-  "Elina P2 - Asas.png",
-  "Elina P3 - Asas.png",
-];
-/* RENDERIZAÇÃO DOS ESPECIAIS */
-
-especiais.forEach((especial, index) => {
-  /* IMAGEM DO ESPECIAL */
-
-  const imagemEspecial = document.createElement("img");
-
-  imagemEspecial.src = `Assets/Personagens + Roupas/Roupas/Png/${especial.arquivo}`;
-
-  imagemEspecial.classList.add(
-    "roupa",
-    especial.classe,
-    `pagina-especial-${especial.pagina}`,
-  );
-
-  imagemEspecial.style.display = "none";
-
-  // A imagem não recebe clique
-  imagemEspecial.style.pointerEvents = "none";
-
-  armario.appendChild(imagemEspecial);
-
-  /* ÁREA DE CLIQUE DO ESPECIAL */
-
-  const areaCliqueEspecial = document.createElement("div");
-
-  areaCliqueEspecial.classList.add(
-    "area-clique",
-    especial.classe,
-    `pagina-especial-${especial.pagina}`,
-  );
-
-  areaCliqueEspecial.style.display = "none";
-
-  areaCliqueEspecial.addEventListener("click", () => {
-    const glitterAtual = personagem.querySelector(".glitter-vestido");
-
-    if (glitterAtual) {
-      glitterAtual.remove();
-    }
-
-    imagemPersonagem.classList.remove("personagem-trocando");
-    void imagemPersonagem.offsetWidth;
-    imagemPersonagem.classList.add("personagem-trocando");
-
-    trocarRoupa(
-      `Assets/Personagens + Roupas/Png/${bonecasVestidasEspeciais[index]}`,
-    );
-  });
-
-  armario.appendChild(areaCliqueEspecial);
 });
 
 /* ÍCONES */
@@ -410,15 +334,13 @@ iconesPersonagem.forEach((icone) => {
   personagem.appendChild(imagemIcone);
 });
 
-/* CATEGORIAS DO ARMÁRIO */
+/* NAVEGAÇÃO ENTRE PÁGINAS DO ARMÁRIO */
 
-let categoriaArmario = "roupas";
+let paginaArmario = 1;
 
-function atualizarCategoriaArmario() {
-  const roupasVisiveis = document.querySelectorAll(".roupa, .area-clique");
-
-  roupasVisiveis.forEach((elemento) => {
-    if (categoriaArmario === "roupas") {
+function atualizarPaginaArmario() {
+  document.querySelectorAll(".roupa, .area-clique").forEach((elemento) => {
+    if (elemento.classList.contains(`pagina-${paginaArmario}`)) {
       elemento.style.display = "";
     } else {
       elemento.style.display = "none";
@@ -426,76 +348,25 @@ function atualizarCategoriaArmario() {
   });
 }
 
-/* TROCA DE CATEGORIA */
-
-document.getElementById("botao-roupas").addEventListener("click", () => {
-  categoriaArmario = "roupas";
-
-  atualizarCategoriaArmario();
-  atualizarPaginaArmario();
-});
-
-document.getElementById("botao-especiais").addEventListener("click", () => {
-  categoriaArmario = "especiais";
-
-  atualizarCategoriaArmario();
-  atualizarPaginaArmario();
-});
-
-/* NAVEGAÇÃO ENTRE PÁGINAS DO ARMÁRIO */
-
-let paginaArmario = 1;
-let paginaEspeciais = 1;
-
-function atualizarPaginaArmario() {
-  document.querySelectorAll(".roupa, .area-clique").forEach((elemento) => {
-    if (categoriaArmario === "roupas") {
-      if (elemento.classList.contains(`pagina-${paginaArmario}`)) {
-        elemento.style.display = "";
-      } else {
-        elemento.style.display = "none";
-      }
-    } else if (categoriaArmario === "especiais") {
-      if (elemento.classList.contains(`pagina-especial-${paginaEspeciais}`)) {
-        elemento.style.display = "";
-      } else {
-        elemento.style.display = "none";
-      }
-    }
-  });
-}
-
-/* BOTÃO VOLTAR */
-
 document.getElementById("botao-voltar").addEventListener("click", () => {
-  if (categoriaArmario === "roupas") {
-    if (paginaArmario === 1) {
-      paginaArmario = 4;
-    } else {
-      paginaArmario--;
-    }
-
-    atualizarPaginaArmario();
-  } else if (categoriaArmario === "especiais") {
-    // Especiais ainda não terá navegação
+  if (paginaArmario > 1) {
+    paginaArmario--;
+  } else {
+    paginaArmario = 4;
   }
-});
 
-/* BOTÃO AVANÇAR */
+  atualizarPaginaArmario();
+});
 
 document.getElementById("botao-avancar").addEventListener("click", () => {
-  if (categoriaArmario === "roupas") {
-    if (paginaArmario === 4) {
-      paginaArmario = 1;
-    } else {
-      paginaArmario++;
-    }
-
-    atualizarPaginaArmario();
-  } else if (categoriaArmario === "especiais") {
-    // Especiais ainda não terá navegação
+  if (paginaArmario < 4) {
+    paginaArmario++;
+  } else {
+    paginaArmario = 1;
   }
+  atualizarPaginaArmario();
 });
+
 /* GLITTER DOS VESTIDOS */
 
 function criarGlitterVestido(numeroRoupa) {
@@ -572,13 +443,14 @@ function criarGlitterVestido(numeroRoupa) {
         particula.textContent = "✦";
       }
 
+      const limitesGlitter = {
+        2: { esquerda: 20, direita: 30, cima: 21, baixo: 65 },
+        3: { esquerda: 24, direita: 30, cima: 20, baixo: 90 },
+        7: { esquerda: 18, direita: 80, cima: 25, baixo: 95 },
+        10: { esquerda: 10, direita: 90, cima: 50, baixo: 90 },
+      };
+
       glitter.appendChild(particula);
     }
   };
-}
-
-function removerGlitter() {
-  document.querySelectorAll(".glitter-vestido").forEach((glitter) => {
-    glitter.remove();
-  });
 }

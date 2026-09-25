@@ -131,116 +131,74 @@ body {
   display: block;
 }
 
-/*Página 1*/
-.roupa4 {
-  top: 13%;
-  left: 22.5%;
+.roupa1 {
+  top: 12.75%;
+  left: 22.3%;
   width: 45% !important;
-  z-index: 2;
+  z-index: 4;
+}
+
+.roupa2 {
+  top: 14.75%;
+  left: 36.85%;
+  width: 45% !important;
+  z-index: 5;
+}
+
+.roupa3 {
+  top: 11.25%;
+  left: 50.6%;
+  width: 45% !important;
+  z-index: 6;
+}
+
+.roupa4 {
+  top: 15%;
+  left: 26.85%;
+  width: 36% !important;
+  z-index: 5;
 }
 
 .roupa5 {
-  top: 17.8%;
-  left: 39%;
-  width: 41% !important;
-  z-index: 3;
+  top: 15%;
+  left: 41.37%;
+  width: 36% !important;
+  z-index: 6;
 }
 
 .roupa6 {
   top: 19.5%;
-  left: 52.5%;
-  width: 41% !important;
-  z-index: 4;
-}
-
-/*Página 2*/
-.roupa1 {
-  top: 12.75%;
-  left: 23%;
-  width: 44% !important;
-  z-index: 1;
-}
-
-.roupa2 {
-  top: 13.7%;
-  left: 42%;
-  width: 35% !important;
-  z-index: 2;
-}
-
-.roupa3 {
-  top: 16.5%;
-  left: 56%;
-  width: 34% !important;
-  z-index: 3;
-}
-
-/*Página 3*/
-.roupa10 {
-  top: 19%;
-  left: 25%;
+  left: 53%;
   width: 40% !important;
-  z-index: 1;
+  z-index: 7;
 }
-
-.roupa11 {
-  top: 16.5%;
-  left: 38.2%;
-  width: 42.5% !important;
-  z-index: 2;
-}
-
-.roupa12 {
-  top: 20.5%;
-  left: 52.5%;
-  width: 41.5% !important;
-  z-index: 3;
-}
-
-/*Página 4*/
 
 .roupa7 {
-  top: 15.75%;
-  left: 24%;
-  width: 42% !important;
+  top: 13%;
+  left: 25%;
+  width: 40% !important;
   z-index: 5;
 }
 
 .roupa8 {
-  top: 12%;
-  left: 38%;
-  width: 43% !important;
+  top: 18%;
+  left: 25%;
+  width: 40% !important;
   z-index: 5;
 }
 
 .roupa9 {
-  top: 20%;
-  left: 53.12%;
+  top: 21%;
+  left: 39.45%;
   width: 40% !important;
   z-index: 6;
 }
 
-/* ESPECIAIS */
-
-.especial1 {
-  top: 12.75%;
-  left: 25.5%;
-  width: 38.5% !important;
-  z-index: 4;
-}
-
-.especial2 {
-  top: 11.5%;
-  left: 39.4%;
-  width: 40% !important;
-  z-index: 5;
-}
-
-.especial3 {
-  top: 14.5%;
-  left: 56%;
-  width: 33.75% !important;
-  z-index: 6;
+.roupa10 {
+  top: 20.5%;
+  left: 52.5%;
+  width: 41% !important;
+  z-index: 7;
 }
 
 /* ÁREAS DE CLIQUE */
@@ -251,21 +209,44 @@ body {
   cursor: pointer;
 }
 
-/*Página 1*/
-.roupa4.area-clique {
-  background: rgba(0, 0, 255, 0.2);
+.roupa1.area-clique {
+  background: rgba(7, 201, 231, 0.2);
   top: 24%;
   left: 32%;
-  width: 23% !important;
+  width: 20% !important;
   height: 58%;
+}
+
+.roupa2.area-clique {
+  background: rgba(0, 255, 0, 0.2);
+  top: 24%;
+  left: 48%;
+  width: 17% !important;
+  height: 58%;
+}
+
+.roupa3.area-clique {
+  background: rgba(0, 0, 255, 0.2);
+  top: 24%;
+  left: 60%;
+  width: 27% !important;
+  height: 58%;
+}
+
+.roupa4.area-clique {
+  background: rgba(0, 0, 255, 0.2);
+  top: 25%;
+  left: 34%;
+  width: 19% !important;
+  height: 30%;
 }
 
 .roupa5.area-clique {
   background: rgba(0, 255, 0, 0.2);
-  top: 24%;
-  left: 48%;
-  width: 21% !important;
-  height: 58%;
+  top: 25%;
+  left: 50%;
+  width: 19% !important;
+  height: 30%;
 }
 
 .roupa6.area-clique {
@@ -276,113 +257,36 @@ body {
   height: 58%;
 }
 
-/*Página 2*/
-.roupa1.area-clique {
-  background: rgba(7, 201, 231, 0.2);
-  top: 24%;
-  left: 33%;
-  width: 19% !important;
-  height: 50%;
-}
-
-.roupa2.area-clique {
-  background: rgba(0, 255, 0, 0.2);
-  top: 24%;
-  left: 50%;
-  width: 28% !important;
-  height: 38%;
-}
-
-.roupa3.area-clique {
-  background: rgba(0, 0, 255, 0.2);
-  top: 24%;
-  left: 62%;
-  width: 24% !important;
-  height: 40%;
-}
-
-/*Página 3*/
-.roupa10.area-clique {
-  background: rgba(29, 241, 14, 0.2);
-  top: 25%;
-  left: 34%;
-  width: 20% !important;
-  height: 58%;
-}
-
-.roupa11.area-clique {
-  background: rgba(67, 199, 23, 0.2);
-  top: 25%;
-  left: 47%;
-  width: 20% !important;
-  height: 58%;
-  z-index: 9;
-}
-
-.roupa12.area-clique {
-  background: rgba(5, 97, 85, 0.2);
-  top: 25%;
-  left: 63%;
-  width: 25% !important;
-  height: 58%;
-  z-index: 10;
-}
-
-/*Página 4*/
 .roupa7.area-clique {
   background: rgba(0, 255, 0, 0.2);
   top: 25%;
-  left: 34%;
-  width: 22% !important;
-  height: 51%;
+  left: 33%;
+  width: 25% !important;
+  height: 45%;
 }
 
 .roupa8.area-clique {
   background: rgba(37, 206, 37, 0.2);
   top: 25%;
-  left: 50%;
+  left: 33%;
   width: 25% !important;
-  height: 50%;
+  height: 58%;
 }
 
 .roupa9.area-clique {
   background: rgba(25, 9, 204, 0.2);
   top: 25%;
-  left: 60%;
+  left: 50%;
   width: 25% !important;
   height: 58%;
 }
 
-/* ESPECIAIS */
-
-.especial1.area-clique {
-  background: rgba(25, 9, 204, 0.2);
-  top: 21%;
-  left: 35%;
-  width: 17% !important;
-  height: 36% !important;
-  z-index: 20;
-  pointer-events: auto;
-}
-
-.especial2.area-clique {
-  background: rgba(18, 17, 18, 0.2);
-  top: 21%;
-  left: 48%;
-  width: 20% !important;
-  height: 36% !important;
-  z-index: 21;
-  pointer-events: auto;
-}
-
-.especial3.area-clique {
-  background: rgba(13, 134, 23, 0.2);
-  top: 21%;
-  left: 62%;
-  width: 23% !important;
-  height: 36% !important;
-  z-index: 22;
-  pointer-events: auto;
+.roupa10.area-clique {
+  background: rgba(67, 199, 23, 0.2);
+  top: 25%;
+  left: 60%;
+  width: 25% !important;
+  height: 58%;
 }
 
 /* ÍCONES */
@@ -447,14 +351,12 @@ body {
   left: 70%;
   bottom: 6%;
   width: 8%;
-  z-index: 10;
 }
 
 #botao-avancar {
   left: 77%;
   bottom: 6%;
   width: 8%;
-  z-index: 10;
 }
 
 /* CONFIGURAÇÕES */
